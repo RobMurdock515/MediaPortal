@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPortal", "MediaPortal.csproj", "{DB489489-556B-4059-84A5-5E51E706C855}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB489489-556B-4059-84A5-5E51E706C855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB489489-556B-4059-84A5-5E51E706C855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB489489-556B-4059-84A5-5E51E706C855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB489489-556B-4059-84A5-5E51E706C855}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9ADBE2A5-2849-4F54-ADF8-C34E964E1665}
+	EndGlobalSection
+EndGlobal

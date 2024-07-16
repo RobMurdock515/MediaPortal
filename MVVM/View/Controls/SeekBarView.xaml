@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="MediaPortal.MVVM.View.Controls.SeekBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MediaPortal.MVVM.View.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="760">
+    <Grid>
+        <Grid.ColumnDefinitions> <!-- Grid with two columns: main slider area and remaining time display -->
+            <ColumnDefinition Width="740" /> <!-- Main column for slider -->
+            <ColumnDefinition Width="40" /> <!-- Column for remaining time text -->
+        </Grid.ColumnDefinitions>
+
+        
+        <!-- Slider for seeking through media playback -->
+        <Slider x:Name="seekBar"
+                Width="720"
+                Minimum="0"
+                Maximum="{Binding MediaDuration}"
+                Value="{Binding CurrentPosition, Mode=TwoWay}"
+                TickFrequency="1"
+                TickPlacement="BottomRight"
+                IsSnapToTickEnabled="False"
+                ValueChanged="SeekBar_ValueChanged"
+                PreviewMouseLeftButtonDown="SeekBar_PreviewMouseLeftButtonDown"
+                Grid.Column="0"
+                Margin="0"/>
+
+        <!-- TextBlock for displaying remaining time -->
+        <TextBlock x:Name="remainingTimeText"
+                   Text="00:00"
+                   Foreground="White"
+                   VerticalAlignment="Center"
+                   Margin="0,-48,0,0" 
+                   Grid.Column="1"
+                   Width="40"
+                   Visibility="Collapsed"/>
+    </Grid>
+</UserControl>

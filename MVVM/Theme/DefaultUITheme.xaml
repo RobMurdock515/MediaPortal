@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModel="clr-namespace:MediaPortal.MVVM.ViewModel">
+
+    <!-- LinearGradientBrush default background -->
+    <LinearGradientBrush x:Key="BackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#2D142C" Offset="0"/>
+        <GradientStop Color="#EE4540" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- Set data context to MainViewModel -->
+    <viewModel:MainViewModel x:Key="MainViewModelInstance"/>
+
+</ResourceDictionary>

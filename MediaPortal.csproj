@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MVVM\Images\ContentControl\back.png" />
+    <None Remove="MVVM\Images\ContentControl\hamburger.png" />
+    <None Remove="MVVM\Images\ContentControl\home.png" />
+    <None Remove="MVVM\Images\ContentControl\music.png" />
+    <None Remove="MVVM\Images\ContentControl\openfile.png" />
+    <None Remove="MVVM\Images\ContentControl\portal.png" />
+    <None Remove="MVVM\Images\ContentControl\recent.png" />
+    <None Remove="MVVM\Images\ContentControl\settings.png" />
+    <None Remove="MVVM\Images\ContentControl\video.png" />
+    <None Remove="MVVM\Images\MediaControl\next.png" />
+    <None Remove="MVVM\Images\MediaControl\pause.png" />
+    <None Remove="MVVM\Images\MediaControl\play.png" />
+    <None Remove="MVVM\Images\MediaControl\previous.png" />
+    <None Remove="MVVM\Images\MediaControl\repeat.png" />
+    <None Remove="MVVM\Images\MediaControl\volume.png" />
+    <None Remove="MVVM\Images\WindowControl\exit.png" />
+    <None Remove="MVVM\Images\WindowControl\maximize.png" />
+    <None Remove="MVVM\Images\WindowControl\minimize.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>6bf52a50-394a-11d3-b153-00c04f79faa6</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MediaPlayer">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>22d6f304-b0f6-11d0-94ab-0080c74c7e95</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FFmpeg.AutoGen" Version="7.0.0" />
+    <PackageReference Include="MediaInfo.Wrapper" Version="21.9.3" />
+    <PackageReference Include="MediaInfoNet" Version="0.3.0" />
+    <PackageReference Include="MediaToolkit" Version="1.1.0.1" />
+    <PackageReference Include="Microsoft.WindowsAPICodePack.Shell" Version="1.1.0" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.5" />
+    <PackageReference Include="TagLibSharp" Version="2.3.0" />
+    <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.20" />
+    <PackageReference Include="WMPLib" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Xabe.FFmpeg" Version="5.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="MVVM\Images\ContentControl\home.png" />
+    <Resource Include="MVVM\Images\ContentControl\music.png" />
+    <Resource Include="MVVM\Images\ContentControl\openfile.png" />
+    <Resource Include="MVVM\Images\ContentControl\portal.png" />
+    <Resource Include="MVVM\Images\ContentControl\recent.png" />
+    <Resource Include="MVVM\Images\ContentControl\settings.png" />
+    <Resource Include="MVVM\Images\ContentControl\video.png" />
+    <Resource Include="MVVM\Images\MediaControl\next.png" />
+    <Resource Include="MVVM\Images\MediaControl\pause.png" />
+    <Resource Include="MVVM\Images\MediaControl\play.png" />
+    <Resource Include="MVVM\Images\MediaControl\previous.png" />
+    <Resource Include="MVVM\Images\MediaControl\repeat.png" />
+    <Resource Include="MVVM\Images\MediaControl\volume.png" />
+    <Resource Include="MVVM\Images\WindowControl\exit.png" />
+    <Resource Include="MVVM\Images\WindowControl\maximize.png" />
+    <Resource Include="MVVM\Images\WindowControl\minimize.png" />
+  </ItemGroup>
+
+</Project>

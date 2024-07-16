@@ -1,0 +1,75 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Image Sources -->
+    <BitmapImage x:Key="HomeIcon" UriSource="/MVVM/Images/ContentControl/home.png"/>
+    <BitmapImage x:Key="MusicIcon" UriSource="/MVVM/Images/ContentControl/music.png"/>
+    <BitmapImage x:Key="VideoIcon" UriSource="/MVVM/Images/ContentControl/video.png"/>
+    <BitmapImage x:Key="SettingsIcon" UriSource="/MVVM/Images/ContentControl/settings.png"/>
+
+    <!-- ToolTip Style -->
+    <Style x:Key="MenuButtonToolTipStyle" TargetType="ToolTip">
+        <Setter Property="Background" Value="#C72C41"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="#C72C41"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="2"/>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="{x:Type RadioButton}"
+           x:Key="MenuButtonTheme">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid>
+                        <!-- Main content with background and image -->
+                        <Border x:Name="BackgroundBorder" Padding="12" Background="{TemplateBinding Background}" CornerRadius="5" Margin="2" HorizontalAlignment="Left">
+                            <!-- Icon -->
+                            <Image Width="24" Height="24" Source="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+
+                        <!-- Vertical black line -->
+                        <Border Background="Black"  Width="1" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Right"/>
+
+                        <!-- Vertical orange indicator -->
+                        <Border x:Name="SelectionIndicator" Background="#EE4540" Width="2" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Panel.ZIndex="1" Margin="5,0,0,0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- Hover Trigger -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="BackgroundBorder" Property="Background" Value="#EE424C"/>
+                        </MultiTrigger>
+
+                        <!-- Tooltip Trigger -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=Content}"/>
+                        </Trigger>
+
+                        <!-- Button Selection Indicator - Trigger -->
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="SelectionIndicator" Property="Visibility" Value="Visible"/>
+                            <Setter Property="Background" Value="#C72C41"/>
+                            <Setter Property="Padding" Value="5"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="SelectionIndicator" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <!-- Apply Tooltip Style -->
+                    <ControlTemplate.Resources>
+                        <Style TargetType="ToolTip" BasedOn="{StaticResource MenuButtonToolTipStyle}" />
+                    </ControlTemplate.Resources>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+</ResourceDictionary>

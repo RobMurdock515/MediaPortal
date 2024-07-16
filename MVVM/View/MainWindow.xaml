@@ -1,0 +1,85 @@
+﻿<Window x:Class="MediaPortal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MediaPortal"
+        xmlns:viewModel="clr-namespace:MediaPortal.MVVM.ViewModel"
+        xmlns:controls="clr-namespace:MediaPortal.MVVM.View.Controls"
+        mc:Ignorable="d"
+        Height="600" Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <!-- Default media portal theme -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/MVVM/Theme/DefaultUITheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <!-- Assigning the view model to the window -->
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <!-- Main border with rounded corners -->
+    <Border Background="{StaticResource BackgroundBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="20">
+        <Grid>
+            <!-- Defining columns for layout -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Defining rows for layout -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+
+            <!-- Application title -->
+            <TextBlock Style="{StaticResource ApplicationTitleStyle}" Grid.ColumnSpan="2" Height="29" Margin="30,0,0,0" Width="123"/>
+
+            <!-- SearchBoxView (commented out - add in version 2) -->
+            <!-- <controls:SearchBoxView Grid.Column="1" Margin="110,0,10,0"/> -->
+
+            <!-- Window buttons on top right for minimize, maximize, close -->
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,10,10,0" Height="25" Width="85">
+                <Button Style="{StaticResource MinimizeButtonStyle}" Command="{Binding MinimizeCommand}" Content="Minimize" ToolTip="Minimize"/>
+                <Button Style="{StaticResource MaximizeButtonStyle}" Command="{Binding MaximizeCommand}" Margin="5,0,5,0" Content="Maximize" ToolTip="Maximize"/>
+                <Button Style="{StaticResource ExitButtonStyle}" Command="{Binding ExitCommand}" Content="Close" ToolTip="Close"/>
+            </StackPanel>
+
+            <!-- Menu buttons -->
+            <StackPanel Grid.Row="1" Height="454" VerticalAlignment="Center">
+                <RadioButton Style="{StaticResource MenuButtonTheme}" Tag="{StaticResource HomeIcon}" Content="Home" Command="{Binding HomeViewCommand}" IsChecked="{Binding IsHomeViewActive, Mode=TwoWay}"/>
+                <RadioButton Style="{StaticResource MenuButtonTheme}" Tag="{StaticResource MusicIcon}" Content="Music Library" Command="{Binding MusicViewCommand}" IsChecked="{Binding IsMusicViewActive, Mode=TwoWay}"/>
+                <RadioButton Style="{StaticResource MenuButtonTheme}" Tag="{StaticResource VideoIcon}" Content="Video Library" Command="{Binding VideoViewCommand}" IsChecked="{Binding IsVideoViewActive, Mode=TwoWay}"/>
+                <RadioButton Style="{StaticResource MenuButtonTheme}" Tag="{StaticResource SettingsIcon}" Content="Settings" Command="{Binding SettingsViewCommand}"/>
+            </StackPanel>
+
+            <!-- Displays current view -->
+            <ContentControl Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" Content="{Binding CurrentView, Mode=TwoWay}"/>
+
+            <!-- SeekBar for media playback -->
+            <controls:SeekBarView Grid.Row="2" Grid.Column="1" Margin="10,0,10,10" Width="775" DataContext="{Binding}" />
+
+            <!-- Media control buttons -->
+            <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,0,0,10">
+                <controls:PreviousView/>
+                <controls:PlayPauseView/>
+                <controls:NextView/>
+                <controls:RepeatView />
+                <controls:VolumeView Volume="{Binding CurrentView.Volume, Mode=TwoWay}"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>

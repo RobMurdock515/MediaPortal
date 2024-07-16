@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\robmu\\OneDrive\\Desktop\\MediaPortal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB489489-556B-4059-84A5-5E51E706C855}|MediaPortal.csproj|c:\\users\\robmu\\onedrive\\desktop\\mediaportal\\mvvm\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DB489489-556B-4059-84A5-5E51E706C855}|MediaPortal.csproj|solutionrelative:mvvm\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\robmu\\OneDrive\\Desktop\\MediaPortal\\MVVM\\View\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\robmu\\OneDrive\\Desktop\\MediaPortal\\MVVM\\View\\MainWindow.xaml",
+              "RelativeToolTip": "MVVM\\View\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-14T23:47:59.705Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

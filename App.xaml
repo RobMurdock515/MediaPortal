@@ -1,0 +1,43 @@
+﻿<Application x:Class="MediaPortal.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MediaPortal"
+             xmlns:viewModel="clr-namespace:MediaPortal.MVVM.ViewModel"
+             xmlns:view="clr-namespace:MediaPortal.MVVM.View"
+             StartupUri="MVVM/View/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Merged dictionaries for themes -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MVVM/Theme/DefaultUITheme.xaml"/>
+                <ResourceDictionary Source="MVVM/Theme/ApplicationTitleTheme.xaml"/>
+                <ResourceDictionary Source="MVVM/Theme/WindowControlTheme.xaml"/>
+                <ResourceDictionary Source="MVVM/Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="MVVM/Theme/SearchBoxTheme.xaml"/>
+                <ResourceDictionary Source="MVVM/Theme/MediaControlTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Data templates for view models -->
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/> <!-- Associates HomeViewModel with HomeView -->
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:MusicViewModel}">
+                <view:MusicView/> <!-- Associates MusicViewModel with MusicView -->
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VideoViewModel}">
+                <view:VideoView/> <!-- Associates VideoViewModel with VideoView -->
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+                <view:SettingsView/> <!-- Associates SettingsViewModel with SettingsView -->
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:MediaPlayerViewModel}">
+                <view:MediaPlayerView/> <!-- Associates MediaPlayerViewModel with MediaPlayerView -->
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
