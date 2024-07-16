@@ -4,11 +4,11 @@ Media Portal is a media player application developed in C# using the MVVM archit
 
 ## MediaPortal_Application
 
-The "MediaPortal_Application" folder contains executable files that allow users to run the Media Portal application without installation. [Download MediaPortal_Application] and follow the instructions below to start using Media Portal immediately.
+The "MediaPortal_Application" folder contains executable files that allow users to run the Media Portal application without installation. [Download MediaPortal_Application](https://github.com/RobMurdock515/MediaPortal/raw/main/MediaPortal_Application.zip) and follow the instructions below to start using Media Portal immediately.
 
 ## MediaPortal_Source
 
-The "MediaPortal_Source" folder contains the archived source code of Media Portal. [Download MediaPortal_SourceCode]
+The "MediaPortal_Source" folder contains the archived source code of Media Portal. [Download MediaPortal_SourceCode](https://github.com/RobMurdock515/MediaPortal/raw/b7eb0fbf9443816dd312dabd85898a69505068ed/MediaPortal_SourceCode.zip).
 
 ## Team Member Contribution
 
@@ -17,6 +17,6 @@ Special thanks to [Kristy Martinez Vanderhill](https://github.com/KVanderhill) f
 ## Download and Installation
 
 To download and install Media Portal, follow these steps:
-1. [Download MediaPortal_Application] the latest release from the releases page.
+1. [Download MediaPortal_Application](https://github.com/RobMurdock515/MediaPortal/raw/main/MediaPortal_Application.zip) the latest release from the releases page.
 2. Unzip the downloaded file to your preferred location.
 3. Navigate to the "MediaPortal_Application" folder and run MediaPortal.exe to launch the application.
