@@ -2,6 +2,8 @@
 
 Media Portal is a media player application developed in C# using the MVVM architecture. It supports playback for a wide range of media formats including AAC, FLAC, MP3, WAV, WMA, AVI, MKV, MOV, MP4, and WMV. Designed with a modern user interface, Media Portal enables users to organize and browse their media libraries seamlessly. The application allows users to open files directly from their computer, set up music and video libraries for easy access, and control playback with intuitive media controls. Media Portal is ideal for users looking for a simple yet powerful media player solution.
 
+![MediaPortal Screenshot](https://github.com/RobMurdock515/MediaPortal/blob/main/MediaPortal_SS.png).
+
 ## MediaPortal_Application
 
 The "MediaPortal_Application" folder contains executable files that allow users to run the Media Portal application without installation. [Download MediaPortal_Application](https://github.com/RobMurdock515/MediaPortal/raw/main/MediaPortal_Application.zip) and follow the instructions below to start using Media Portal immediately.
